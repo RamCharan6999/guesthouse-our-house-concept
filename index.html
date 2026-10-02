@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guesthouse Our House · Meia Praia — Concept Redesign</title>
+<meta name="description" content="Concept redesign for Guesthouse Our House in Meia Praia, Lagos.">
+<style>
+:root{
+  --navy:#17384b;--sea:#24798d;--sky:#dceef0;--paper:#f8f5ed;--white:#fffdf8;
+  --orange:#d96d3c;--sand:#e8d6b7;--ink:#1d3138;--muted:#647177;--line:rgba(29,49,56,.16)
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}img{display:block;width:100%}
+.concept{background:#102d3b;color:#eaf3f3;text-align:center;padding:9px 16px;font-size:10px;text-transform:uppercase;letter-spacing:.16em}
+.nav{position:absolute;top:31px;left:0;right:0;z-index:5;height:80px;padding:0 clamp(24px,6vw,96px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;color:white;border-bottom:1px solid rgba(255,255,255,.24)}
+.logo{font:30px Georgia,'Times New Roman',serif}.logo span{font:9px Arial,sans-serif;text-transform:uppercase;letter-spacing:.2em;margin-left:8px;opacity:.72}
+.links{display:flex;gap:30px;font-size:10px;text-transform:uppercase;letter-spacing:.14em}
+.nav-cta{justify-self:end;border:1px solid rgba(255,255,255,.55);padding:12px 17px;font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+.hero{position:relative;min-height:94vh;color:#fff;display:flex;align-items:flex-end;overflow:hidden}
+.hero>img{position:absolute;inset:0;height:100%;object-fit:cover}
+.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,40,53,.78),rgba(9,40,53,.16) 68%),linear-gradient(0deg,rgba(8,37,49,.72),transparent 45%)}
+.hero-copy{position:relative;z-index:2;margin:0 0 128px clamp(24px,8vw,130px);max-width:820px}
+.eyebrow,.kicker{font-size:10px;text-transform:uppercase;letter-spacing:.2em;font-weight:700}
+.eyebrow{color:#ffd5a5;margin-bottom:25px}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:400;margin:0}
+h1{font-size:clamp(62px,8vw,118px);line-height:.9;letter-spacing:-.05em}
+.hero-copy p{font-size:17px;line-height:1.7;max-width:620px;color:rgba(255,255,255,.84);margin:29px 0}
+.actions{display:flex;gap:24px;align-items:center}.button{display:inline-flex;padding:15px 20px;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:700}
+.button.light{background:var(--white);color:var(--navy)}.button.dark{background:var(--navy);color:#fff}.button.outline{border:1px solid var(--navy)}
+.ghost{font-size:11px;border-bottom:1px solid rgba(255,255,255,.55);padding-bottom:6px}
+.factbar{position:absolute;z-index:2;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(4,1fr);padding:0 clamp(24px,8vw,130px);background:rgba(16,55,69,.62);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.2)}
+.factbar div{padding:22px 24px;border-right:1px solid rgba(255,255,255,.16)}.factbar div:first-child{padding-left:0}
+.factbar strong{display:block;font:29px Georgia,serif}.factbar span{display:block;margin-top:5px;font-size:9px;text-transform:uppercase;letter-spacing:.13em;color:rgba(255,255,255,.65)}
+
+.section{padding:clamp(82px,10vw,150px) clamp(24px,8vw,130px)}.kicker{color:var(--orange);margin-bottom:27px}
+.story{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(52px,8vw,120px);align-items:center}
+.story h2,.rooms h2,.contact h2{font-size:clamp(46px,5.5vw,80px);line-height:.97;letter-spacing:-.04em}
+.story p{font-size:15px;line-height:1.8;color:var(--muted);margin:28px 0}.story img{aspect-ratio:4/3;object-fit:cover}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);margin-top:35px}
+.feature{padding:14px 0;border-bottom:1px solid var(--line);font-size:11px;text-transform:uppercase;letter-spacing:.08em}.feature:before{content:'—';color:var(--orange);margin-right:9px}
+
+.rooms{background:#e7f0ef}.rooms-head{display:grid;grid-template-columns:1fr 390px;gap:50px;align-items:end;margin-bottom:48px}.rooms-head p{font-size:14px;line-height:1.75;color:var(--muted)}
+.types{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:34px}.type{border:1px solid rgba(29,49,56,.22);border-radius:999px;padding:9px 13px;font-size:9px;text-transform:uppercase;letter-spacing:.1em;background:rgba(255,255,255,.42)}
+.room-gallery{display:grid;grid-template-columns:1.25fr .75fr .75fr;grid-template-rows:280px 280px;gap:13px}
+.room-gallery figure{margin:0;position:relative;overflow:hidden;background:#ddd}.room-gallery figure:first-child{grid-row:1/3}.room-gallery img{height:100%;object-fit:cover;transition:transform .5s}.room-gallery figure:hover img{transform:scale(1.02)}
+.label{position:absolute;left:16px;bottom:14px;background:rgba(255,253,248,.9);padding:8px 11px;font-size:9px;text-transform:uppercase;letter-spacing:.12em}
+.room-note{margin-top:17px;color:var(--muted);font-size:11px}
+
+.common{display:grid;grid-template-columns:1.15fr .85fr;background:var(--navy);color:#fff}
+.common-gallery{display:grid;grid-template-columns:1fr 1fr}.common-gallery img{height:100%;min-height:640px;object-fit:cover}.common-gallery img:last-child{border-left:1px solid rgba(255,255,255,.16)}
+.common-copy{padding:clamp(64px,8vw,120px);display:flex;flex-direction:column;justify-content:center}.common-copy .kicker{color:#ffd2a5}
+.common-copy h2{font-size:clamp(50px,6vw,88px);line-height:.94}.common-copy p{font-size:15px;line-height:1.75;max-width:480px;color:rgba(255,255,255,.74);margin:28px 0}
+.common-list{border-top:1px solid rgba(255,255,255,.18);margin-top:8px}.common-list div{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.18);font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+
+.breakfast{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(50px,8vw,120px);align-items:center}.breakfast img{aspect-ratio:4/3;object-fit:cover}
+.breakfast h2{font-size:clamp(48px,6vw,86px);line-height:.96}.breakfast p{font-size:15px;line-height:1.8;color:var(--muted);margin:28px 0}
+.breakfast-tags{display:flex;gap:8px;flex-wrap:wrap}.breakfast-tags span{background:var(--sand);padding:9px 12px;font-size:9px;text-transform:uppercase;letter-spacing:.11em}
+
+.sea{position:relative;min-height:82vh;color:#fff;display:flex;align-items:flex-end}.sea>img{position:absolute;inset:0;height:100%;object-fit:cover}
+.sea:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,37,49,.82),rgba(8,37,49,.04) 70%)}
+.sea-copy{position:relative;z-index:2;padding:0 clamp(24px,8vw,130px) clamp(72px,8vw,120px);max-width:900px}
+.sea-copy .kicker{color:#ffd2a5}.sea-copy h2{font-size:clamp(56px,7vw,100px);line-height:.93}.sea-copy p{max-width:550px;line-height:1.7;color:rgba(255,255,255,.82)}
+
+.proof{background:#f0dfc5;text-align:center}.score{font:clamp(110px,16vw,220px)/.88 Georgia,serif;letter-spacing:-.06em;color:var(--sea)}.score small{font-size:.19em;color:#718186}
+.proof h2{font-size:clamp(36px,4.5vw,64px);max-width:920px;margin:32px auto 55px}.proof-grid{max-width:960px;margin:auto;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr)}
+.proof-grid div{padding:25px;border-right:1px solid var(--line)}.proof-grid div:last-child{border-right:0}.proof-grid strong{display:block;font:28px Georgia,serif}.proof-grid span{display:block;margin-top:7px;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#6e7879}
+
+.contact-card{display:grid;grid-template-columns:1fr 1fr;gap:80px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:60px 0}.details{align-self:end}
+.detail{margin-bottom:24px}.detail span{display:block;color:var(--orange);font-size:9px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:7px}.detail p{margin:0;font:20px/1.5 Georgia,serif}
+.contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+
+footer{background:#102d3b;color:rgba(255,255,255,.67);padding:50px clamp(24px,8vw,130px);display:grid;grid-template-columns:1fr 2fr auto;gap:40px}.footer-logo{font:29px Georgia,serif;color:#fff}
+footer p{font-size:11px;line-height:1.6;margin:0}footer>a{font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+
+@media(max-width:1000px){
+.links{display:none}.nav{grid-template-columns:1fr auto}.story,.common,.breakfast,.contact-card{grid-template-columns:1fr}.rooms-head{grid-template-columns:1fr}
+.room-gallery{grid-template-columns:1fr 1fr;grid-template-rows:auto}.room-gallery figure,.room-gallery figure:first-child{grid-row:auto;aspect-ratio:4/3}
+.common-gallery img{min-height:430px}.proof-grid{grid-template-columns:1fr 1fr}.proof-grid div{border-bottom:1px solid var(--line)}
+footer{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+.logo{font-size:20px}.logo span{display:none}.nav-cta{font-size:9px;padding:10px 11px}.hero{min-height:900px}.hero-copy{margin-left:24px;margin-right:24px;margin-bottom:245px}.hero-copy h1{font-size:58px}.hero-copy p{font-size:15px}
+.factbar{grid-template-columns:1fr 1fr;padding:0 24px}.factbar div{padding:14px 10px}.section{padding:80px 24px}.feature-grid{grid-template-columns:1fr}
+.room-gallery{grid-template-columns:1fr}.common-gallery{grid-template-columns:1fr}.common-gallery img{min-height:0;aspect-ratio:4/3}.common-gallery img:last-child{border-left:0}.common-copy{padding:70px 24px}
+.proof-grid{grid-template-columns:1fr}.sea-copy{padding:0 24px 70px}.actions{flex-direction:column;align-items:flex-start}.contact-card{gap:40px}
+}
+</style>
+</head>
+<body>
+<div class="concept">Concept redesign · not the official Guesthouse Our House website</div>
+
+<header class="nav">
+  <a class="logo" href="#top">Our House <span>Guesthouse · Meia Praia</span></a>
+  <nav class="links"><a href="#house">The house</a><a href="#rooms">Rooms</a><a href="#spaces">Spaces</a><a href="#contact">Contact</a></nav>
+  <a class="nav-cta" href="https://www.booking.com/hotel/pt/guest-house-nunes.html" target="_blank">Check availability ↗</a>
+</header>
+
+<section class="hero" id="top">
+  <img src="images/site/hero.jpg" alt="Sun terrace at Guesthouse Our House in Lagos">
+  <div class="hero-copy">
+    <div class="eyebrow">Meia Praia · Lagos · Algarve</div>
+    <h1>A house<br>by the sea.</h1>
+    <p>A relaxed seven-room guesthouse between the Atlantic and Lagos, with bright shared spaces, breakfast in the morning and Meia Praia a short walk away.</p>
+    <div class="actions">
+      <a class="button light" href="mailto:ourhouselagos@gmail.com?subject=Availability%20at%20Guesthouse%20Our%20House">Ask availability ↗</a>
+      <a class="ghost" href="#house">Discover Our House ↓</a>
+    </div>
+  </div>
+  <div class="factbar">
+    <div><strong>9.1</strong><span>Booking guest score</span></div>
+    <div><strong>583</strong><span>Booking reviews</span></div>
+    <div><strong>300 m</strong><span>From Meia Praia</span></div>
+    <div><strong>9.5</strong><span>Staff score</span></div>
+  </div>
+</section>
+
+<section class="section story" id="house">
+  <div>
+    <div class="kicker">01 · Our House</div>
+    <h2>Beach days.<br>Quiet returns.</h2>
+    <p>Guesthouse Our House sits in the calm Meia Praia area, close to the sand and away from the busiest streets of central Lagos. The property combines individually decorated rooms with generous communal areas and a sunny outdoor terrace.</p>
+    <div class="feature-grid">
+      <div class="feature">Private bathrooms</div><div class="feature">Free on-site parking</div>
+      <div class="feature">Shared kitchen</div><div class="feature">Sun terrace & garden</div>
+      <div class="feature">Free Wi-Fi</div><div class="feature">Breakfast included</div>
+    </div>
+  </div>
+  <img src="images/site/detail.jpg" alt="Bright shared interior at Guesthouse Our House">
+</section>
+
+<section class="section rooms" id="rooms">
+  <div class="rooms-head">
+    <div><div class="kicker">02 · The rooms</div><h2>Seven rooms.<br>Each a little different.</h2></div>
+    <p>Current Booking categories include twin rooms with private bathrooms, sea-view twin rooms, a superior sea-view twin room and a studio with sea view. The photos below are presented as a general property gallery rather than assigned to an exact room category.</p>
+  </div>
+  <div class="types">
+    <div class="type">Twin · private bathroom</div><div class="type">Studio · sea view</div>
+    <div class="type">Twin · sea view</div><div class="type">Superior twin · sea view</div><div class="type">Twin room</div>
+  </div>
+  <div class="room-gallery">
+    <figure><img src="images/site/room1.jpg" alt="Guest room at Guesthouse Our House"><div class="label">Guest room</div></figure>
+    <figure><img src="images/site/room2.jpg" alt="Guest room at Guesthouse Our House"><div class="label">Guest room</div></figure>
+    <figure><img src="images/site/room3.jpg" alt="Guest room at Guesthouse Our House"><div class="label">Guest room</div></figure>
+    <figure><img src="images/site/room4.jpg" alt="Guest room at Guesthouse Our House"><div class="label">Guest room</div></figure>
+    <figure><img src="images/site/bathroom.jpg" alt="Bathroom at Guesthouse Our House"><div class="label">Private bathroom</div></figure>
+  </div>
+  <div class="room-note">Public Guesthouse Our House imagery. Exact room-to-photo assignment is intentionally not implied in this concept.</div>
+</section>
+
+<section class="common" id="spaces">
+  <div class="common-gallery">
+    <img src="images/site/lounge.jpg" alt="Shared lounge at Guesthouse Our House">
+    <img src="images/site/kitchen.jpg" alt="Shared kitchen at Guesthouse Our House">
+  </div>
+  <div class="common-copy">
+    <div class="kicker">03 · Shared spaces</div>
+    <h2>Make yourself<br>at home.</h2>
+    <p>The house is built around spaces guests can actually use: a communal kitchen, a bright lounge, outdoor seating and a sun terrace for the slower hours between beach and town.</p>
+    <div class="common-list"><div>Fully equipped shared kitchen</div><div>Lounge with sofas & TV</div><div>Sun loungers & outdoor seating</div><div>Garden and terrace</div></div>
+  </div>
+</section>
+
+<section class="section breakfast">
+  <img src="images/site/breakfast.jpg" alt="Breakfast and dining area at Guesthouse Our House">
+  <div>
+    <div class="kicker">04 · Morning at Our House</div>
+    <h2>Breakfast,<br>then the beach.</h2>
+    <p>Breakfast is served each morning and the current listing offers continental, vegan and buffet options. Guests can eat in the kitchen dining area, lounge or patio before heading towards Meia Praia.</p>
+    <div class="breakfast-tags"><span>Continental</span><span>Vegan</span><span>Buffet</span></div>
+  </div>
+</section>
+
+<section class="sea">
+  <img src="images/site/seaview.jpg" alt="Sea view from Guesthouse Our House">
+  <div class="sea-copy">
+    <div class="kicker">05 · Meia Praia</div>
+    <h2>The Atlantic,<br>just down the road.</h2>
+    <p>The property describes itself as sitting between the sea and countryside, with Meia Praia within a short walk and Lagos Marina around 1.8 km away.</p>
+  </div>
+</section>
+
+<section class="section proof">
+  <div class="kicker">06 · Guest proof</div>
+  <div class="score">9.1<small>/10</small></div>
+  <h2>The reputation is already doing the hard part.</h2>
+  <div class="proof-grid">
+    <div><strong>9.5</strong><span>Staff</span></div><div><strong>9.4</strong><span>Cleanliness</span></div>
+    <div><strong>9.4</strong><span>Comfort</span></div><div><strong>9.2</strong><span>Facilities</span></div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="contact-card">
+    <div><div class="kicker">07 · Direct contact</div><h2>Come stay<br>near Meia Praia.</h2></div>
+    <div class="details">
+      <div class="detail"><span>Address</span><p>Urbanização Baía de Cristal, Lote 1<br>Meia Praia, 8600-315 Lagos, Portugal</p></div>
+      <div class="detail"><span>Email</span><p><a href="mailto:ourhouselagos@gmail.com">ourhouselagos@gmail.com</a></p></div>
+      <div class="detail"><span>Phone</span><p><a href="tel:+351965519947">+351 965 519 947</a></p></div>
+      <div class="detail"><span>Local accommodation licence</span><p>22952/AL</p></div>
+      <div class="contact-actions">
+        <a class="button dark" href="mailto:ourhouselagos@gmail.com?subject=Availability%20at%20Guesthouse%20Our%20House">Email the guesthouse ↗</a>
+        <a class="button outline" href="https://www.booking.com/hotel/pt/guest-house-nunes.html" target="_blank">Booking listing ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Our House</div>
+  <p>Concept redesign created from publicly available property information and imagery. Not affiliated with or commissioned by Guesthouse Our House.</p>
+  <a href="#top">Back to top ↑</a>
+</footer>
+</body>
+</html>
